@@ -4,3 +4,4 @@
 
 Создать калькулятор похожий на приложение Calculator.app в macOS
 
+[Результат](https://moiseyev.github.io/calculator/calculator.html)
