@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="14px" viewBox="0 0 21 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>plus-minus</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-149.000000, -171.000000)" fill="#000000">
+            <g id="plus-minus" transform="translate(149.000000, 171.000000)">
+                <polygon id="/" points="6.2171936 14.0026245 4.6000061 14.0026245 9.44277954 7.39324951 13.8900452 1.32000732 15.4896545 1.32000732 10.5677795 8.0524292"></polygon>
+                <polygon id="-" points="20.0100002 11 20.0100002 9.5 12.5 9.5 12.5 11"></polygon>
+                <path d="M5.00500011,5 L8.01000023,5 L8.01000023,3.5 L5.00500011,3.5 L5.00500011,0.494999886 L3.50500011,0.494999886 L3.50500011,3.5 L0.5,3.5 L0.5,5 L3.50500011,5 L3.50500011,8.00500011 L5.00500011,8.00500011 L5.00500011,5 Z" id="+"></path>
+            </g>
+        </g>
+    </g>
+</svg>
