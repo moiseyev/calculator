@@ -71,7 +71,7 @@ class Calculator {
   }
 
   _processCommandKey(key) {
-    const command = key.getAttribute('data-command');
+    const command = key.dataset.command;
     switch (command) {
       case 'clear':
         this._clear();
@@ -93,7 +93,7 @@ class Calculator {
   }
 
   _processDigitKey(key) {
-    const digit = key.getAttribute('data-digit');
+    const digit = key.dataset.digit;
     // Чтобы не получалось 00000
     if (digit === '0' && this._input === '') {
       return;
@@ -117,7 +117,7 @@ class Calculator {
       'multiply': (a, b) => a * b,
       'divide':   (a, b) => a / b
     };
-    const operator = key.getAttribute('data-operator');
+    const operator = key.dataset.operator;
     this._allKeys.forEach(key => key.classList.remove('calculator__key_selected'));
     if (operator !== 'equal') {
       key.classList.add('calculator__key_selected');
