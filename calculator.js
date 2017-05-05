@@ -81,13 +81,13 @@ class Calculator {
         if (this._input === '') {
           return;
         }
-        this._input = String(parseFloat(this._input) * -1);
+        this._input = String(this._input * -1);
         break;
       case 'percent':
         if (this._input === '') {
           return;
         }
-        this._input = String(parseFloat(this._input) / 100);
+        this._input = String(this._input / 100);
         break;
     }
     this._print();
