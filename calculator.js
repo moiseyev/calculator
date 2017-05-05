@@ -100,7 +100,7 @@ class Calculator {
       return;
     }
     // Чтобы нельзя было ввести больше одной точки
-    if (digit === '.' && ~this._input.indexOf('.')) {
+    if (digit === '.' && this._input.includes('.')) {
       return;
     }
     // Если точка первая в вводе, добавляем перед ней 0
