@@ -189,6 +189,7 @@ class Calculator {
       '109':      'data-operator="minus"',
       '110':      'data-digit="."',
       '111':      'data-operator="divide"',
+      '186shift': 'data-operator="multiply"',
       '187':      'data-operator="equal"',
       '187shift': 'data-operator="plus"',
       '188':      'data-digit="."',
