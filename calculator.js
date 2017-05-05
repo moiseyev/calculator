@@ -4,7 +4,7 @@ class Calculator {
   constructor(options) {
     this._el = options.el;
     this._allKeys = this._el.querySelectorAll('.calculator__key');
-    this._digits = this._el.querySelector('.calculator__digits');
+    this._display = this._el.querySelector('.calculator__display');
 
     this._clear();
     this._print();
@@ -33,15 +33,15 @@ class Calculator {
   _print() {
     // Удобней работать с '.' как десятичным разделителем для
     // внутреннего представления, заменяя при выводе на ','
-    this._digits.innerHTML = this._input.replace('.', ',') || '0';
+    this._display.innerHTML = this._input.replace('.', ',') || '0';
 
     // Корректируем размер шрифта чтобы строка всегда вмещалась в экран
     let fontSize = 46;
     const screenWidth = 208;
-    this._digits.style.fontSize = '';
-    while(this._digits.offsetWidth > screenWidth) {
+    this._display.style.fontSize = '';
+    while(this._display.offsetWidth > screenWidth) {
       fontSize--;
-      this._digits.style.fontSize = `${fontSize}px`;
+      this._display.style.fontSize = `${fontSize}px`;
     }
   }
 
