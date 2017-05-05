@@ -37,8 +37,9 @@ class Calculator {
 
     // Корректируем размер шрифта чтобы строка всегда вмещалась в экран
     let fontSize = 46;
+    const screenWidth = 208;
     this._digits.style.fontSize = '';
-    while(this._digits.offsetWidth > 208) {
+    while(this._digits.offsetWidth > screenWidth) {
       fontSize--;
       this._digits.style.fontSize = `${fontSize}px`;
     }
