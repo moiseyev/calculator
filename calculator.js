@@ -9,7 +9,16 @@ class Calculator {
     this._clear();
     this._print();
 
-    this._el.addEventListener('click', this._onKeyClick.bind(this));
+    this._el.querySelectorAll('.calculator__key[data-command]').forEach(key => {
+      key.addEventListener('click', event => this._processCommandKey(event.target.dataset.command));
+    });
+    this._el.querySelectorAll('.calculator__key[data-digit]').forEach(key => {
+      key.addEventListener('click', event => this._processDigitKey(event.target.dataset.digit));
+    });
+    this._el.querySelectorAll('.calculator__key[data-operator]').forEach(key => {
+      key.addEventListener('click', event => this._processOperatorKey(event.target.dataset.operator, event.target));
+    });
+
     this._el.addEventListener('mousedown', this._addKeyPress.bind(this));
     this._el.addEventListener('mouseup', this._removeKeyPress.bind(this));
     this._el.addEventListener('mouseout', this._removeKeyPress.bind(this));
@@ -45,19 +54,6 @@ class Calculator {
     }
   }
 
-  _onKeyClick(event) {
-    if (!event.target.classList.contains('calculator__key')) {
-      return;
-    }
-    if (event.target.hasAttribute('data-command')) {
-      this._processCommandKey(event.target);
-    } else if (event.target.hasAttribute('data-digit')) {
-      this._processDigitKey(event.target);
-    } else if (event.target.hasAttribute('data-operator')) {
-      this._processOperatorKey(event.target);
-    }
-  }
-
   _addKeyPress(event) {
     if (!event.target.classList.contains('calculator__key')) {
       return;
@@ -71,8 +67,7 @@ class Calculator {
     this._allKeys.forEach(key => key.classList.remove('calculator__key_pressed'));
   }
 
-  _processCommandKey(key) {
-    const command = key.dataset.command;
+  _processCommandKey(command) {
     switch (command) {
       case 'clear':
         this._clear();
@@ -93,8 +88,7 @@ class Calculator {
     this._print();
   }
 
-  _processDigitKey(key) {
-    const digit = key.dataset.digit;
+  _processDigitKey(digit) {
     // Чтобы не получалось 00000
     if (digit === '0' && this._userInput === '') {
       return;
@@ -111,14 +105,13 @@ class Calculator {
     this._print();
   }
 
-  _processOperatorKey(key) {
+  _processOperatorKey(operator, key) {
     const operators = {
       'plus':     (a, b) => a + b,
       'minus':    (a, b) => a - b,
       'multiply': (a, b) => a * b,
       'divide':   (a, b) => a / b
     };
-    const operator = key.dataset.operator;
     this._allKeys.forEach(key => key.classList.remove('calculator__key_selected'));
     if (operator !== 'equal') {
       key.classList.add('calculator__key_selected');
