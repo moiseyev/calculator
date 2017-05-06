@@ -35,7 +35,7 @@ class Calculator {
 
     // Переменные необходимые для сценария, когда нажимают многократно =, без ввода новых параметров
     this._singleEqual = false;
-    this._dobleEqual = false;
+    this._doubleEqual = false;
     this._stickyB = null;
   }
 
@@ -121,10 +121,10 @@ class Calculator {
       if (!this._operator) {
         return;
       }
-      this._dobleEqual = this._singleEqual ? true : false;
+      this._doubleEqual = this._singleEqual ? true : false;
 
       // Логика необходимая для работы многократного нажатия =, без ввода новых аргументов
-      if (this._dobleEqual) {
+      if (this._doubleEqual) {
         this._a = parseFloat(this._userInput || 0);
         this._b = this._stickyB;
       } else {
