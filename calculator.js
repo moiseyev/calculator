@@ -18,7 +18,7 @@ class Calculator {
   }
 
   _clear() {
-    this._input = '';
+    this._userInput = '';
     this._a = 0;
     this._b = 0;
     this._operator = null;
@@ -33,7 +33,7 @@ class Calculator {
   _print() {
     // Удобней работать с '.' как десятичным разделителем для
     // внутреннего представления, заменяя при выводе на ','
-    this._display.innerHTML = this._input.replace('.', ',') || '0';
+    this._display.innerHTML = this._userInput.replace('.', ',') || '0';
 
     // Корректируем размер шрифта чтобы строка всегда вмещалась в экран
     let fontSize = 46;
@@ -78,16 +78,16 @@ class Calculator {
         this._clear();
         break;
       case 'plus-minus':
-        if (this._input === '') {
+        if (this._userInput === '') {
           return;
         }
-        this._input = String(this._input * -1);
+        this._userInput = String(this._userInput * -1);
         break;
       case 'percent':
-        if (this._input === '') {
+        if (this._userInput === '') {
           return;
         }
-        this._input = String(this._input / 100);
+        this._userInput = String(this._userInput / 100);
         break;
     }
     this._print();
@@ -96,18 +96,18 @@ class Calculator {
   _processDigitKey(key) {
     const digit = key.dataset.digit;
     // Чтобы не получалось 00000
-    if (digit === '0' && this._input === '') {
+    if (digit === '0' && this._userInput === '') {
       return;
     }
     // Чтобы нельзя было ввести больше одной точки
-    if (digit === '.' && this._input.includes('.')) {
+    if (digit === '.' && this._userInput.includes('.')) {
       return;
     }
     // Если точка первая в вводе, добавляем перед ней 0
-    if (digit === '.' && this._input === '') {
-      this._input = '0';
+    if (digit === '.' && this._userInput === '') {
+      this._userInput = '0';
     }
-    this._input += digit;
+    this._userInput += digit;
     this._print();
   }
 
@@ -132,27 +132,27 @@ class Calculator {
 
       // Логика необходимая для работы многократного нажатия =, без ввода новых аргументов
       if (this._dobleEqual) {
-        this._a = parseFloat(this._input || 0);
+        this._a = parseFloat(this._userInput || 0);
         this._b = this._stickyB;
       } else {
-        this._b = parseFloat(this._input || 0);
+        this._b = parseFloat(this._userInput || 0);
         this._stickyB = this._b;
       }
 
-      this._input = String(operators[this._operator](this._a, this._b));
+      this._userInput = String(operators[this._operator](this._a, this._b));
 
       this._singleEqual = true;
       this._print();
     } else {
-      this._a = parseFloat(this._input || 0);
+      this._a = parseFloat(this._userInput || 0);
       this._operator = operator;
-      this._input = '';
+      this._userInput = '';
       this._singleEqual = false;
     }
   }
 
   _backspace() {
-    this._input = this._input.slice(0, -1);
+    this._userInput = this._userInput.slice(0, -1);
     this._print();
   }
 
