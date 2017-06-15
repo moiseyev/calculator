@@ -1,0 +1,113 @@
+.calculator {
+  width: 234px;
+  height: 322px;
+  box-shadow: 0 20px 40px 0 rgba(0,0,0,0.5);
+  border-radius: 5px;
+  margin: 50px auto;
+  border: 1px solid #656565;
+  overflow: hidden;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+}
+
+.calculator__screen {
+  position: relative;
+  background-color: rgba(0,0,0,0.4);
+  width: 234px;
+  height: 79px;
+  box-sizing: border-box;
+  font-family: -apple-system, "San Francisco";
+  font-weight: 100;
+  color: #FFF;
+  letter-spacing: 0.3px;
+  padding: 24px 13px 0;
+  text-align: right;
+  backdrop-filter: blur(5px);
+}
+
+.calculator__display {
+  position: absolute;
+  bottom: 0;
+  right: 13px;
+  font-size: 46px;
+  white-space: nowrap;
+}
+
+.calculator__key-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.calculator__key {
+  display: inline-block;
+  width: 58px;
+  height: 48px;
+  color: #000;
+  border-top: 1px solid #8E8E8E;
+  border-right: 1px solid #8E8E8E;
+  font-family: -apple-system, "San Francisco";
+  text-align: center;
+  line-height: 48px;
+  font-size: 21px;
+  font-weight: 400;
+  box-sizing: border-box;
+}
+
+.calculator__key-row:last-child .calculator__key {
+  height: 49px;
+}
+
+.calculator__key_command {
+  background: #D6D6D6;
+  font-size: 18px;
+}
+
+.calculator__key_command[data-command='plus-minus'] {
+  background-image: url(plus-minus.svg);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: 21px 14px;
+}
+
+.calculator__key_digit {
+  background: #E0E0E0;
+}
+
+.calculator__key_operator {
+  color: #FFF;
+  background: #F79231;
+  border-right: none;
+  font-size: 32px;
+  font-weight: 200;
+  line-height: 38px;
+}
+
+.calculator__key_wide {
+  width: 116px;
+  text-align: left;
+}
+
+.calculator__key_wide:before {
+  content: '';
+  display: inline-block;
+  width: 23px;
+}
+
+.calculator__key_selected {
+  box-shadow: inset 1px 1px 0 0 #8E8E8E, inset -1px -1px 0 0 #8E8E8E;
+}
+
+.calculator__key_pressed.calculator__key_operator {
+  color: #4C666E;
+  background-color: #C37431;
+}
+
+.calculator__key_pressed.calculator__key_digit {
+  background-color: #B2B2B2;
+}
+
+.calculator__key_pressed.calculator__key_command {
+  background-color: #A9A9A9;
+}

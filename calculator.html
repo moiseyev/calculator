@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="fonts.css">
+    <link rel="stylesheet" href="calculator.css">
+    <script src="calculator.js" defer></script>
+  </head>
+  <body>
+
+    <div class="calculator">
+      <div class="calculator__screen">
+        <div class="calculator__display">0</div>
+      </div>
+      <div class="calculator__keyboard">
+        <div class="calculator__key-row">
+          <div class="calculator__key calculator__key_command" data-command="clear" title="Очистить (Esc); Очистить всё (Opt-Esc)">AC</div>
+          <div class="calculator__key calculator__key_command" data-command="plus-minus" title="Изменить знак отображаемого значения (или нажмите «Option-знак минуса»)"></div>
+          <div class="calculator__key calculator__key_command" data-command="percent" title="Проценты (или нажмите «Shift-5»)">%</div>
+          <div class="calculator__key calculator__key_operator" data-operator="divide" title="Разделить (или нажмите «/»)">÷</div>
+        </div>
+        <div class="calculator__key-row">
+          <div class="calculator__key calculator__key_digit" data-digit="7">7</div>
+          <div class="calculator__key calculator__key_digit" data-digit="8">8</div>
+          <div class="calculator__key calculator__key_digit" data-digit="9">9</div>
+          <div class="calculator__key calculator__key_operator" data-operator="multiply" title="Умножить (или нажмите «*»)">×</div>
+        </div>
+        <div class="calculator__key-row">
+          <div class="calculator__key calculator__key_digit" data-digit="4">4</div>
+          <div class="calculator__key calculator__key_digit" data-digit="5">5</div>
+          <div class="calculator__key calculator__key_digit" data-digit="6">6</div>
+          <div class="calculator__key calculator__key_operator" data-operator="minus" title="Вычесть (или нажмите «-»)">−</div>
+        </div>
+        <div class="calculator__key-row">
+          <div class="calculator__key calculator__key_digit" data-digit="1">1</div>
+          <div class="calculator__key calculator__key_digit" data-digit="2">2</div>
+          <div class="calculator__key calculator__key_digit" data-digit="3">3</div>
+          <div class="calculator__key calculator__key_operator" data-operator="plus" title="Прибавить (или нажмите «+»)">+</div>
+        </div>
+        <div class="calculator__key-row">
+          <div class="calculator__key calculator__key_digit calculator__key_wide" data-digit="0">0</div>
+          <div class="calculator__key calculator__key_digit" data-digit=".">,</div>
+          <div class="calculator__key calculator__key_operator" data-operator="equal" title="Равно (или нажмите Return)">=</div>
+        </div>
+      </div>
+    </div>
+
+  </body>
+</html>
